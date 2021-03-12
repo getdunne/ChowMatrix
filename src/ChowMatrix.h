@@ -5,7 +5,6 @@
 #include "dsp/Parameters/DelayTypeControl.h"
 #include "dsp/Parameters/InsanityControl.h"
 #include "dsp/Parameters/SyncControl.h"
-#include "gui/AutoUpdating.h"
 #include "state/StateManager.h"
 #include <pch.h>
 
@@ -57,7 +56,6 @@ private:
     // create this here so loading new nodes is always fast
     SharedResourcePointer<LookupTables> luts;
 
-    AutoUpdater updater;
     StateManager stateManager;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ChowMatrix)
