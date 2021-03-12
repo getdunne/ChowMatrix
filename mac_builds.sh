@@ -8,12 +8,12 @@ rm -Rf build/
 rm -Rf bin/*Mac*
 
 # set up build VST
-VST_PATH=~/Developer/Plugin_SDKs/VST2_SDK/
+VST_PATH=~/SDKs/VST_SDK/VST2_SDK/
 sed -i '' "9s~.*~juce_set_vst2_sdk_path(${VST_PATH})~" CMakeLists.txt
 sed -i '' '16s/#//' CMakeLists.txt
 
 # cmake new builds
-TEAM_ID=$(more ~/Developer/mac_id)
+TEAM_ID="eveloper ID Application: Dunne & Associates Technology Consulting, Inc (W5AEHZN66V)"
 cmake -Bbuild -GXcode -DCMAKE_XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY="Developer ID Application" \
     -DCMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM="$TEAM_ID" \
     -DCMAKE_XCODE_ATTRIBUTE_CODE_SIGN_STYLE="Manual" \
